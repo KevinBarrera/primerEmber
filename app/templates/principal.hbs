@@ -1,0 +1,14 @@
+<h1>Estas logueado correctamente</h1>
+
+{{input type="text" value = name}}
+<button{{action 'createMovie' name on = "click"}}>Crear</button>
+<br>
+{{#if model}}
+    <ul>
+        {{#each model as |movie|}}
+            <li>{{movie.name}} -- <button {{action 'borrarMovie' movie on = "click"}}>Borrar</button></li>
+        {{/each}}
+    </ul>
+{{else}}
+    No hay películas
+{{/if}}
